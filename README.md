@@ -18,9 +18,11 @@ At this moment there isn't settings available. The pandoc executable should be i
 At this moment, since this is an early release, there is known issues.
 
 ## Release Notes
-First version
+### [0.0.2]
+ - New converted file opens automatically
 
-### 0.0.1
-First version
+### [0.0.1]
+- Initial release
+- Added output options asciidoc and markua
 
 ---

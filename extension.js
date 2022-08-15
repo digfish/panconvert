@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
-const fs = require('fs');
+//const fs = require('fs');
 const path = require('path');
 const { execFile } = require('child_process');
 
@@ -23,7 +23,7 @@ function activate(context) {
 		// The code you place here will be executed every time your command is executed
 		
 		let selectedOutputFormat = await vscode.window.showQuickPick(['md', 'html', 'latex', 'beamer',
-		 'docbook', 'mediawiki','docx','odt','pdf','epub']);
+		 'docbook', 'mediawiki','docx','odt','pdf','epub','asciidoc','markua']);
 		
 		let sourcePathFileName = vscode.window.activeTextEditor.document.fileName;
 		let sourcePathExtension = sourcePathFileName.split('.').pop();
@@ -38,6 +38,7 @@ function activate(context) {
 				return;
 			}
 			vscode.window.showInformationMessage(`${targetPathFileName} created`);
+			vscode.window.showTextDocument(vscode.Uri.file(targetPathFileName));
 			//console.log(`stdout: ${stdout}`);
 			console.log(`stderr: ${stderr}`);
 		});
